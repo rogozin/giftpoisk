@@ -17,6 +17,7 @@ gem 'mysql2'
 #end
 
 gem 'jquery-rails'
+gem "unicorn"
 #gem 'gift-core', :git => "git@github.com:rilya/giftb2b.git"
 git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
   gem 'gift-core'
