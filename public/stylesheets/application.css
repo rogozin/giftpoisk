@@ -1,0 +1,41 @@
+#gift_logo {
+  background: url("images/logo_giftb2b.gif") no-repeat top left;
+}
+
+table
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table.noborder, table.noborder td {border:0px}
+
+table th
+{  
+  color:#EAF7E6;
+  background-color: #C36;
+}
+
+table tr.alert td
+{
+  background-color:red;
+}
+
+.center_block h1, .center_block h2 {
+	color:#c36;
+}
+
+.b-ext-search-inner {
+  background-color:#b8e2ea
+}
+
+.b-ext-search { 
+  background-color: #3ec2d2;
+}
+
+
+.left_block p.b-header span{
+  color:#3ec2d2;
+  font-size:13pt
+}
+
