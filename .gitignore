@@ -6,3 +6,4 @@ tmp/
 .sass-cache/
 hooks
 HEAD
+Gemfile.lock
