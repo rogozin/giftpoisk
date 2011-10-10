@@ -1,20 +1,30 @@
-GIT
-  remote: git@github.com:rilya/giftb2b.git
-  revision: 40f46c3caf0ceaf42824397fd426040f342fa318
-  branch: engines
+PATH
+  remote: ~/ROR/work/gift/auth
   specs:
     gift-auth (0.0.1)
       acl9
       authlogic
       rails (~> 3.1.0)
+
+PATH
+  remote: ~/ROR/work/gift/base
+  specs:
     gift-base (0.0.1)
       RedCloth
       rails (~> 3.1.0)
       will_paginate
+
+PATH
+  remote: ~/ROR/work/gift/core
+  specs:
     gift-core (0.0.1)
       composite_primary_keys (~> 4.0.0)
       paperclip
       rails (~> 3.1.0)
+
+PATH
+  remote: ~/ROR/work/gift/lk
+  specs:
     gift-lk (0.0.1)
       composite_primary_keys (~> 4.0.0)
       gift-auth
@@ -77,6 +87,7 @@ GEM
     jquery-rails (1.0.14)
       railties (~> 3.0)
       thor (~> 0.14)
+    kgio (2.6.0)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -115,6 +126,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.6)
+    raindrops (0.7.0)
     rake (0.9.2)
     rdoc (3.9.4)
     sprockets (2.0.2)
@@ -127,6 +139,10 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.30)
+    unicorn (4.1.1)
+      kgio (~> 2.4)
+      rack
+      raindrops (~> 0.6)
     will_paginate (3.0.2)
     writeexcel (0.6.9)
 
@@ -142,3 +158,4 @@ DEPENDENCIES
   jquery-rails
   mysql2
   rails (= 3.1.0)
+  unicorn
