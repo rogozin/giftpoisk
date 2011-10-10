@@ -6,3 +6,5 @@ tmp/
 .sass-cache/
 hooks
 HEAD
+Gemfile.lock
+config/initializers/mailer.rb
