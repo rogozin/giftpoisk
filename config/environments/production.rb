@@ -57,6 +57,6 @@ Giftpoisk::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  config.cache_store = :dalli_store, '127.0.0.1',  { :namespace => Giftr3, :expires_in => 1.day}
+  config.cache_store = :dalli_store, '127.0.0.1',  { :namespace => "Giftr3", :expires_in => 1.day}
 
 end
