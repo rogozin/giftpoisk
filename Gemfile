@@ -18,20 +18,22 @@ gem 'mysql2'
 
 gem 'jquery-rails'
 gem "unicorn"
-#gem 'gift-core', :git => "git@github.com:rilya/giftb2b.git"
-#git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
-#  gem 'gift-core'
-#  gem 'gift-auth'
-#  gem 'gift-lk'
-#  gem 'gift-base'
-#end
-
-gem 'gift-core', :path => "~/ROR/work/gift/core"
-gem 'gift-auth', :path => "~/ROR/work/gift/auth"
-gem 'gift-lk', :path => "~/ROR/work/gift/lk"
-gem 'gift-base', :path => "~/ROR/work/gift/base"
 gem 'dalli'
 
+
+git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
+  gem 'gift-core'
+  gem 'gift-auth'
+  gem 'gift-lk'
+  gem 'gift-base'
+end
+
+  group :development do 
+    gem 'gift-core', :path => "~/ROR/work/gift/core"
+    gem 'gift-auth', :path => "~/ROR/work/gift/auth"
+    gem 'gift-lk', :path => "~/ROR/work/gift/lk"
+    gem 'gift-base', :path => "~/ROR/work/gift/base"
+  end
 
 # Use unicorn as the web server
 # gem 'unicorn'
