@@ -21,18 +21,18 @@ gem "unicorn"
 gem 'dalli'
 
 
-git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
-  gem 'gift-core'
-  gem 'gift-auth'
-  gem 'gift-lk'
-  gem 'gift-base'
-end
+#git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
+#  gem 'gift-core'
+#  gem 'gift-auth'
+#  gem 'gift-lk'
+#  gem 'gift-base'
+#end
 
   group :development do 
-    gem 'gift-core', :path => "~/ROR/work/gift/core"
-    gem 'gift-auth', :path => "~/ROR/work/gift/auth"
-    gem 'gift-lk', :path => "~/ROR/work/gift/lk"
-    gem 'gift-base', :path => "~/ROR/work/gift/base"
+    gem 'gift-core', :path => "../gift/core"
+    gem 'gift-auth', :path => "../gift/auth"
+    gem 'gift-lk', :path => "../gift/lk"
+    gem 'gift-base', :path => "../gift/base"
   end
 
 # Use unicorn as the web server
