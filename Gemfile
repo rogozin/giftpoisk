@@ -20,7 +20,6 @@ gem 'jquery-rails'
 gem "unicorn"
 gem 'dalli'
 
-
 #git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
 #  gem 'gift-core'
 #  gem 'gift-auth'
@@ -28,12 +27,12 @@ gem 'dalli'
 #  gem 'gift-base'
 #end
 
-  group :development do 
+#  group :development do 
     gem 'gift-core', :path => "../gift/core"
     gem 'gift-auth', :path => "../gift/auth"
     gem 'gift-lk', :path => "../gift/lk"
     gem 'gift-base', :path => "../gift/base"
-  end
+#  end
 
 # Use unicorn as the web server
 # gem 'unicorn'
