@@ -4,10 +4,10 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require base/reset
  * require_tree . 
- *= require_self
  *= require base/jquery.treeview
  *= require base/layout
  *= require base/base 
+ *= require_self
 */
 
 #gift_logo {
