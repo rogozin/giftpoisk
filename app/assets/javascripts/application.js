@@ -7,4 +7,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require base/search
-//= require_tree .
+//= require jquery.treeview
+//= require base/base
+//= require jquery.cookie
+//require_tree .
+
