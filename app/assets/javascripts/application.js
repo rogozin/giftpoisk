@@ -6,4 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require base/search
 //= require_tree .
