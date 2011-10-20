@@ -11,10 +11,12 @@
 */
 
 #gift_logo {
-  background: url("images/giftpoisk_logo.png") no-repeat top left;
+  background: image-url("images/giftpoisk_logo.png") no-repeat top left;
   width:208px;
   height:86px;
 }
+
+$c_braun:#481f0d;
 
 table
 {
@@ -27,7 +29,7 @@ table.noborder, table.noborder td {border:0px}
 table th
 {  
   color:#EAF7E6;
-  background-color: #C36;
+  background-color: $c_braun;
 }
 
 table tr.alert td
@@ -52,17 +54,16 @@ table tr.alert td
 }
 
 .lk {
-
-background:#3EC2D2;
+  background:#3EC2D2;
 }
 
 .left_block p.b-header span {
-  color:#481f0d;
+  color:$c_braun;
   font-size:13pt;
 }
 
 .treeview li a {
-color: #481f0d;
+color: $c_braun;
 }
 .treeview li a:hover, .treeview ul a:hover {
     color:#3ec2d2;
@@ -90,9 +91,17 @@ color: #CC0000;
 }
 
 .lk a:hover, a.menu_left {
-color: #481F0D;
+color: $c_braun;
 }
 
-#footer {
-	background: #F1FCFC;
+#footer {background: #F1FCFC;}
+
+#add_to_cart a, .add-to-cart a {color:#32a3b1;}
+
+a.article_a {color:$c_braun;}
+
+
+.basket_50 {
+    #cart_name a {color:#32a3b1;}
 }
+

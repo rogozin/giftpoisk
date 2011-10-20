@@ -63,6 +63,16 @@
     <%= render :partial => "cart/cart"    %>
     </div>
   <% end -%>
+   <div class="line"></div>
+    <div class="line-margin"></div> 
+    <div class="left_block">
+      <div id="user_menu" class="left_block">
+      <%= content_tag(:p, link_to('Список заказов', lk_engine.orders_path, :class => "menu_left")) %>
+      <%= content_tag(:p, link_to('Коммерческие предложения', lk_engine.commercial_offers_path, :class => "menu_left")) %>
+      <%= content_tag(:p, link_to('Клиенты', lk_engine.firms_path, :class => "menu_left")) %>
+      <%= content_tag(:p, link_to('Мой список товаров', lk_engine.products_path, :class => "menu_left")) %>
+      </div>
+    </div>
 	 <div class="line"></div>
     <div class="left_block">
     <p>
@@ -108,16 +118,7 @@
     <%= render :partial => "shared/pass_input" %>
     <% end -%>
     </div> <!-- end lk --> 
-    <div class="line line-margin"></div>
-    <div class="line-margin"></div> 
-    <div class="left_block">
-      <div id="user_menu" class="left_block">
-      <%= content_tag(:p, link_to('Список заказов', lk_engine.orders_path, :class => "menu_left")) %>
-      <%= content_tag(:p, link_to('Коммерческие предложения', lk_engine.commercial_offers_path, :class => "menu_left")) %>
-      <%= content_tag(:p, link_to('Клиенты', lk_engine.firms_path, :class => "menu_left")) %>
-      <%= content_tag(:p, link_to('Мой список товаров', lk_engine.products_path, :class => "menu_left")) %>
-      </div>
-    </div>
+   
     <div class="line line-margin"></div> 
     <div class="left_block b-background"> 
        <%= render :partial => 'shared/catalog' %>
