@@ -17,6 +17,11 @@
 }
 
 $c_braun:#481f0d;
+$c_blue:#32a3b1;
+$c_light_blue:#3ec2d2;
+$c_dark_blue:#0173C0;
+
+h1 {color:$c_braun;}
 
 table
 {
@@ -38,7 +43,7 @@ table tr.alert td
 }
 
 .center_block h1, .center_block h2 {
-	color:#3EC2D2;
+	color:$c_light_blue;
 }
 
 .b-ext-search-inner {
@@ -54,7 +59,7 @@ table tr.alert td
 }
 
 .lk {
-  background:#3EC2D2;
+  background:$c_light_blue;
 }
 
 .left_block p.b-header span {
@@ -66,10 +71,10 @@ table tr.alert td
 color: $c_braun;
 }
 .treeview li a:hover, .treeview ul a:hover {
-    color:#3ec2d2;
+    color:$c_light_blue;
 }
 .treeview li span.selected a {
-color: #3ec2d2;
+color: $c_light_blue;
 }
 
 .treeview ul a {
@@ -83,7 +88,7 @@ color: #863d1d;
 }
 
 .article_t_p a:hover, p.r_text, .per-page, .article_t_p em, .article_t_p a:hover, p.r_text a:hover, a:hover.menu_left, p a:hover.menu_left {
-color: #3ec2d2;
+color: $c_light_blue;
 }
 .article_sup, .article_name, #add_to_cart a {
 color: #CC0000;
@@ -96,12 +101,29 @@ color: $c_braun;
 
 #footer {background: #F1FCFC;}
 
-#add_to_cart a, .add-to-cart a {color:#32a3b1;}
+#add_to_cart, .add-to-cart {
+ a {
+  color:$c_dark_blue;
+  &:hover {color: $c_light_blue};
+ }
+}
+ 
 
 a.article_a {color:$c_braun;}
 
 
 .basket_50 {
-    #cart_name a {color:#32a3b1;}
+    #cart_name a {color:$c_dark_blue;}
+}
+
+
+.b-blue-background {
+background-color:#b9e3ea;
+margin-left:10px;
+margin-bottom:5px;
+ p {margin-left:5px;
+    padding: 5px 0;
+  a:hover {color:$c_dark_blue;}
+ }
 }
 

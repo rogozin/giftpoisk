@@ -64,7 +64,7 @@
     </div>
   <% end -%>
    <div class="line"></div>
-    <div class="line-margin"></div> 
+    <div class="line-top-margin"></div> 
     <div class="left_block">
       <div id="user_menu" class="left_block">
       <%= content_tag(:p, link_to('Список заказов', lk_engine.orders_path, :class => "menu_left")) %>
@@ -73,14 +73,16 @@
       <%= content_tag(:p, link_to('Мой список товаров', lk_engine.products_path, :class => "menu_left")) %>
       </div>
     </div>
-	 <div class="line"></div>
-    <div class="left_block">
-    <p>
-      <%= link_to 'Расширенный поиск', main_app.root_path, :class => "menu_left"  %>
-    </p>
-      
+
+    <div class="left_block ">
+    <div class="b-blue-background">
+  	 <div class="line line-top-margin"></div>
+       <p>
+        <%= link_to 'Расширенный поиск', main_app.root_path, :class => "menu_left"  %>
+       </p>
+  	 <div class="line line-no-margin"></div>
     </div>
-	 <div class="line"></div>
+    </div>
     <div class="left_block"> 
       <%= render :partial => 'shared/tematicheskie' %>       
     </div> <!-- end left_block --> 
@@ -119,7 +121,7 @@
     <% end -%>
     </div> <!-- end lk --> 
    
-    <div class="line line-margin"></div> 
+    <div class="line line-top-margin"></div> 
     <div class="left_block b-background"> 
        <%= render :partial => 'shared/catalog' %>
     </div> <!-- end left_block --> 
