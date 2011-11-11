@@ -19,6 +19,7 @@ end
 gem 'jquery-rails'
 gem "unicorn"
 gem 'dalli'
+gem "tinymce-rails"
 
 #git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
 #  gem 'gift-core'
