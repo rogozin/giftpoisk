@@ -76,6 +76,8 @@
     </div>
 
     <div class="left_block ">
+    <%= render :partial => 'shared/banner', :locals => {:position => 21} %>
+    
     <div class="b-blue-background">
   	 <div class="line line-top-margin"></div>
        <p>
@@ -85,6 +87,7 @@
     </div>
     </div>
     <div class="left_block"> 
+      <%= render :partial => 'shared/banner', :locals => {:position => 22} %>
       <p class="b-header"><span><strong>Тематические сувениры</strong></span></p> 
       <%= render :partial => 'shared/tematicheskie' %>       
     </div> <!-- end left_block --> 
@@ -123,7 +126,9 @@
     <%= render :partial => "shared/pass_input" %>
     <% end -%>
     </div> <!-- end lk --> 
-   
+   <div class="left_block">
+         <%= render :partial => 'shared/banner', :locals => {:position => 11} %>
+   </div>
     <div class="line line-top-margin"></div> 
     <div class="left_block b-background">
       <p class="b-header"><span><strong>Каталог сувениров</strong></span></p>  
