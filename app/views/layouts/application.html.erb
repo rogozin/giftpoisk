@@ -4,7 +4,6 @@
   <title><%= @page_title || page_title %></title>
   <meta name="description" content="<%= yield :meta_description%>" /> 
   <meta name="keywords" content="<%= yield :meta_keywords %>" />
-<!--  <meta name="google-site-verification" content="itTFr28n6WdLKxkGQIYGFvlBnPQYKNxd9Xj2oIwFS4g" />  -->
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <script type="text/javascript">
@@ -63,6 +62,16 @@
     <%= render :partial => "cart/cart"    %>
     </div>
   <% end -%>
+
+   <div class="lk" id="lk"> 
+    <%  if current_user -%>
+      <%= render  :partial =>'shared/lk' %>
+    <% else -%>
+      <%= render :partial => "shared/pass_input" %>
+    <% end -%>
+   </div> <!-- end lk --> 
+
+   
    <div class="line"></div>
     <div class="line-top-margin"></div> 
     <div class="left_block">
@@ -71,69 +80,63 @@
       <%= content_tag(:p, link_to('Коммерческие предложения', lk_engine.commercial_offers_path, :class => "menu_left")) %>
       <%= content_tag(:p, link_to('Клиенты', lk_engine.firms_path, :class => "menu_left")) %>
       <%= content_tag(:p, link_to('Мой список товаров', lk_engine.products_path, :class => "menu_left")) %>
+      <%= content_tag(:p, link_to('Мои новости', lk_engine.news_index_path, :class => "menu_left")) %>     
       <%= content_tag(:p, link_to('Образцы', lk_engine.samples_path, :class => "menu_left")) %>      
       </div>
     </div>
 
     <div class="left_block ">
-    <%= render :partial => 'shared/banner', :locals => {:position => 21} %>
-    
-    <div class="b-blue-background">
-  	 <div class="line line-top-margin"></div>
-       <p>
-        <%= link_to 'Расширенный поиск', main_app.root_path, :class => "menu_left"  %>
-       </p>
-  	 <div class="line line-no-margin"></div>
+      <%= render :partial => 'shared/banner', :locals => {:position => 21} %>    
+      <div class="b-blue-background">
+    	 <div class="line line-top-margin"></div>
+         <p><%= link_to 'Расширенный поиск', main_app.root_path, :class => "menu_left"  %></p>
+    	 <div class="line line-no-margin"></div>
+      </div>
     </div>
-    </div>
-    <div class="left_block"> 
-      <%= render :partial => 'shared/banner', :locals => {:position => 22} %>
-      <p class="b-header"><span><strong>Тематические сувениры</strong></span></p> 
-      <%= render :partial => 'shared/tematicheskie' %>       
-    </div> <!-- end left_block --> 
-    <div class="line"></div> 
-    <div class="left_block"> 
-    <p class="b-header"><span><strong>Праздники</strong></span></p> 
-    <%= render :partial => 'shared/analogs' %>
-    </div> <!-- end left_block --> 
-    <div class="line"></div> 
-    <div class="left_block"> 
-      <%#= render :partial => 'shared/predlozheniya' %> 
-    </div> <!-- end left_block --> 
-    <div class="left_block"> 
-      <%#= render :partial => 'shared/uslugi' %> 
-    </div> <!-- end left_block --> 
-    <div class="banner_left"></div> 
-    <div class="left_block"> 
-      <%#= render :partial => 'shared/sovety' %> 
-    </div> <!-- end left_block --> 
-
- 
-    <!--<div class="left_block"> 
-      <%#= render :partial => 'shared/statistika' %>
-    </div> <!-- end left_block --> 
-    <!--<div class="line"></div> 
-    <div class="left_block"> 
-      <%#= render :partial => 'shared/opros' %>
-    </div> <!-- end left_block -->     
+    <div class="left_block"><%= render :partial => 'shared/banner', :locals => {:position => 22} %></div> <!-- end left_block --> 
   </div> <!--end right_content --> 
+  
   <div id="left_content"> 
-   <%= link_to  image_tag("pix.gif", :alt => "giftpoisk.ru", :id => "gift_logo" ), main_app.root_path  %>
-    <div class="lk" id="lk"> 
-    <%  if current_user -%>
-      <%= render  :partial =>'shared/lk' %>
-    <% else -%>
-    <%= render :partial => "shared/pass_input" %>
-    <% end -%>
-    </div> <!-- end lk --> 
+   <%= link_to  image_tag("pix.gif", :alt => "giftpoisk.ru", :id => "gift_logo" ), main_app.root_path  %>  
    <div class="left_block">
          <%= render :partial => 'shared/banner', :locals => {:position => 11} %>
    </div>
-    <div class="line line-top-margin"></div> 
+
     <div class="left_block b-background">
-      <p class="b-header"><span><strong>Каталог сувениров</strong></span></p>  
+    
+      <div class="cat-name">
+        <p>Каталог сувениров</p>
+        <a id="catalog_0" href="#0" class="b-down"></a>
+      </div>
+     
+      <div class="catalog-tree js-hidden">
        <%= render :partial => 'shared/catalog' %>
+      </div>
+     
+      <div class="cat-name">
+        <p>Тематические сувениры</p>
+        <a  id="catalog_1" href="#1" class="b-down"></a>
+      </div>
+     
+     <div class="catalog-tree js-hidden">
+       <%= render :partial => 'shared/tematicheskie' %>
+      </div>
+
+      <div class="cat-name">
+        <p>Сувениры к праздникам</p>
+        <a  id="catalog_2" href="#2" class="b-down"></a>
+      </div>
+      <div class="catalog-tree js-hidden">
+       <%= render :partial => 'shared/analogs' %>
+      </div>         
+       
     </div> <!-- end left_block --> 
+    <div class="left_block">
+      <%= render :partial => 'shared/banner', :locals => {:position => 12} %>
+       <div class="b-n-header latest-news"><div class="b-b-block"><div class="b-t-block"><%= render :partial => 'shared/latest_news' %></div></div></div>
+      <%= render :partial => 'shared/banner', :locals => {:position => 13} %>
+    </div>       
+
   </div> <!--end left_content --> 
   <div class="clear"></div> 
   <div id="footer">
