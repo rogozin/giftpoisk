@@ -72,17 +72,17 @@
    </div> <!-- end lk --> 
 
    
-   <div class="line"></div>
-    <div class="line-top-margin"></div> 
-    <div class="left_block">
-      <div id="user_menu" class="left_block">
-      <%= content_tag(:p, link_to('Список заказов', lk_engine.orders_path, :class => "menu_left")) %>
-      <%= content_tag(:p, link_to('Коммерческие предложения', lk_engine.commercial_offers_path, :class => "menu_left")) %>
-      <%= content_tag(:p, link_to('Клиенты', lk_engine.firms_path, :class => "menu_left")) %>
-      <%= content_tag(:p, link_to('Мой список товаров', lk_engine.products_path, :class => "menu_left")) %>
-      <%= content_tag(:p, link_to('Мои новости', lk_engine.news_index_path, :class => "menu_left")) %>     
-      <%= content_tag(:p, link_to('Образцы', lk_engine.samples_path, :class => "menu_left")) %>      
-      </div>
+   <div id="user_menu" class="left_block">
+     <div class="line"></div>
+      <h3>Личный кабинет</h3>
+      <%= content_tag(:p, link_to('Поступившие заказы', lk_engine.orders_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Клиенты', lk_engine.firms_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Коммерческие предложения', lk_engine.commercial_offers_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Моя база сувениров', lk_engine.products_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Мои новости', lk_engine.news_index_path, :class => "l-folder")) %>     
+      <%= content_tag(:p, link_to('Образцы', lk_engine.samples_path, :class => "l-folder")) %>      
+      <%= content_tag(:p, link_to('Пользователи', lk_engine.accounts_path, :class => "l-users")) %>      
+     <div class="line"></div>
     </div>
 
     <div class="left_block ">
