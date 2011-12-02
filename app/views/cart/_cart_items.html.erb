@@ -1,0 +1,29 @@
+<table width="100%">
+  <tr>
+    <th>Изображение</th>
+    <th>Артикул</th>
+    <th>Поставщик</th>
+    <th>Наименование</th>
+    <th>Колв-во на складе</th>
+    <th>Цена за шт</th>
+    <th>Кол-во</th>
+    <th>Сумма</th>
+    <th></th>
+  </tr>
+  <% @cart.items.each do |item| -%>
+    <tr>
+      <td><%= link_to product_image(item.product), product_path(item.product), :target => :_blank %></td>
+      <td><%= article item.product %></td>
+      <td><%= link_to(item.product.supplier.name, supplier_path(item.product.supplier.permalink)) %></td>
+      <td><%= item.product.short_name %></td>
+      <td><%= total_store_count item.product %></td>
+      <td><%= product_price(item.product) %></td>
+      <td><%= text_field_tag "cart_items[#{item.product.id}]", item.quantity, :class => "inp-quantity" %></td>
+      <td><%= number_to_currency item.price, :unit => 'руб.' %></td>
+      <td><%= link_to image_tag('remove.png'), cart_path(item.product.id), :remote => true, :method => :delete, :confirm => "Удалить товар?", :title => "Удалить" %></td>
+    </tr>
+  <% end -%>
+  <tr>
+    <td colspan="7"><%= submit_tag "Пересчитать" %></td>
+  </tr>
+</table>
