@@ -43,7 +43,10 @@
   <% end -%>
 </head> 
 <body> 
-  <div id="header_title"> 
+  <div id="header_title">
+    <%= link_to 'Каталог сувениров', "#"  %>
+    <%= link_to 'Профессиональный инструмент для продажи сувениров', "#"  %>
+    <%= link_to 'Каталог на свой сайт', "#"  %>
   </div> <!-- end header_title --> 
   <div id="header"> 
   </div> <!-- end header --> 
@@ -87,13 +90,8 @@
 
     <div class="left_block ">
       <%= render :partial => 'shared/banner', :locals => {:position => 21} %>    
-      <div class="b-blue-background">
-    	 <div class="line line-top-margin"></div>
-         <p><%= link_to 'Расширенный поиск', main_app.root_path, :class => "menu_left"  %></p>
-    	 <div class="line line-no-margin"></div>
-      </div>
-    </div>
-    <div class="left_block"><%= render :partial => 'shared/banner', :locals => {:position => 22} %></div> <!-- end left_block --> 
+      <%= render :partial => 'shared/banner', :locals => {:position => 22} %>
+    </div> <!-- end left_block --> 
   </div> <!--end right_content --> 
   
   <div id="left_content"> 
