@@ -7,6 +7,7 @@
  *= require jquery.treeview
  *= require base/layout
  *= require base/base
+ *= require base/search 
  *= require news
  *= require_self
 */
@@ -39,14 +40,6 @@ table tr.alert td
 
 .center_block h1, .center_block h2 {
 	color:$c_light_blue;
-}
-
-.b-ext-search-inner {
-  background-color:#c5e8ee;
-}
-
-.b-ext-search{ 
-  background-color: #b9e3ea; 
 }
 
 .text_bg { 
