@@ -11,5 +11,6 @@
 //= require jquery.treeview
 //= require base
 //= require jquery.cookie
+//= require layout
 //require_tree .
 

@@ -12,10 +12,9 @@
  *= require_self
 */
 
-$c_braun:#481f0d;
-$c_blue:#32a3b1;
-$c_light_blue:#3ec2d2;
-$c_dark_blue:#0173C0;
+@import "giftpoisk_vars";
+@import "buttons";
+
 
 h1 {color:$c_braun;}
 
@@ -70,6 +69,10 @@ color: #642c13;
 
 }
 
+input[type="submit"], input[type="button"], button {
+   @extend .br_button;
+}
+
 
 .treeview li ul li ul li a {
 color: #863d1d;
@@ -97,7 +100,8 @@ color: $c_braun;
   
 }
 
-#footer {background: #F1FCFC;}
+#footer {background: #F1FCFC;
+	padding-bottom:10px;}
 
 #add_to_cart, .add-to-cart {
  a {
@@ -114,24 +118,3 @@ a.article_a {color:$c_braun;}
     #cart_name a {color:$c_dark_blue;}
 }
 
-#user_menu {
-  .line {
-    background:$c_braun;
-    height:7px;
-  }
-  h3 {
-     color:$c_braun;
-     padding-left:20px;
-   }
-   a {
-      padding-left:20px;
-      color:$c_braun; 
-      text-decoration:underline;
-      &:hover {color: lighten($c_braun, 20%)};
-      &.l-folder { background: image-url("lk/images/folder-open.png") no-repeat left center;}
-      &.l-users { background: image-url("lk/images/group.png") no-repeat left center;}
-   }
-   
-   line-height:2em;
-   
-}
