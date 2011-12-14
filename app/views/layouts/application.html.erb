@@ -59,7 +59,7 @@
     </div>
   </div> <!-- end all_content --> 
   <div id="right_content"> 
-  <% if current_user -%>    
+  <% if current_user && !current_user.is_e_shop_user? -%>    
     <div id="cart" class="basket_right">
     <%= render :partial => "cart/cart"    %>
     </div>
@@ -77,6 +77,7 @@
    <div id="user_menu" class="left_block">
      <div class="line"></div>
       <h3>Личный кабинет</h3>
+      <% unless current_user -%>        
       <%= content_tag(:p, link_to('Поступившие заказы', lk_engine.orders_path, :class => "l-folder")) %>
       <%= content_tag(:p, link_to('Клиенты', lk_engine.firms_path, :class => "l-folder")) %>
       <%= content_tag(:p, link_to('Коммерческие предложения', lk_engine.commercial_offers_path, :class => "l-folder")) %>
@@ -84,6 +85,9 @@
       <%= content_tag(:p, link_to('Мои новости', lk_engine.news_index_path, :class => "l-folder")) %>     
       <%= content_tag(:p, link_to('Образцы', lk_engine.samples_path, :class => "l-folder")) %>      
       <%= content_tag(:p, link_to('Пользователи', lk_engine.accounts_path, :class => "l-users")) %>      
+      <% else -%>
+      <%= render_lk_menu %>
+      <% end -%>
      <div class="line"></div>
     </div>
 

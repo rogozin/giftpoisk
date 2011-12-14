@@ -78,7 +78,7 @@ input[type="submit"], input[type="button"], button {
 color: #863d1d;
 }
 
-.article_t_p a:hover, p.r_text, .per-page, .article_t_p em, .article_t_p a:hover, p.r_text a:hover, a:hover.menu_left, p a:hover.menu_left {
+.article_t_p a:hover, p.r_text, .per-page, .article_t_p em, .article_t_p a:hover, p.r_text a:hover {
 color: $c_light_blue;
 }
 .article_sup, .article_name, #add_to_cart a {
@@ -86,7 +86,7 @@ color: #CC0000;
 
 }
 
-.lk a:hover, a.menu_left {
+.lk a:hover {
 color: $c_braun;
 }
 
