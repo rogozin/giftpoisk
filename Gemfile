@@ -7,7 +7,7 @@ gem 'rails', '3.1.3'
 
 gem 'mysql2'
 gem "therubyracer"
-
+gem 'coffee-rails', '~> 3.1.1'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
