@@ -59,7 +59,7 @@
     </div>
   </div> <!-- end all_content --> 
   <div id="right_content"> 
-  <% if current_user && !current_user.is_e_shop_user? -%>    
+  <% if current_user && current_user.is_e_commerce? -%>    
     <div id="cart" class="basket_right">
     <%= render :partial => "cart/cart"    %>
     </div>
