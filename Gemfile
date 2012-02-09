@@ -44,3 +44,4 @@ gem "tinymce-rails"
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem "letter_opener", :group => :development
