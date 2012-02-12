@@ -21,6 +21,7 @@ gem "unicorn"
 gem 'dalli'
 gem "tinymce-rails"
 
+gem "twitter_bootstrap_form_for", :git =>  "git://github.com/coder2000/twitter_bootstrap_form_for.git"
 #git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
 #  gem 'gift-core'
 #  gem 'gift-auth'
