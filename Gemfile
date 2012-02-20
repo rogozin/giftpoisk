@@ -23,7 +23,8 @@ gem 'dalli'
 gem "tinymce-rails"
 
 gem "twitter_bootstrap_form_for", :git =>  "git://github.com/tzeskimo/twitter_bootstrap_form_for.git"
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :git => 'git://github.com/anjlab/bootstrap-rails.git'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', 
+:git => 'git://github.com/anjlab/bootstrap-rails.git'
 gem 'gift-core', :path => "../gift/core"
 gem 'gift-auth', :path => "../gift/auth"
 gem 'gift-lk', :path => "../gift/lk"
