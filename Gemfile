@@ -8,7 +8,7 @@ gem 'rails', '3.1.3'
 gem 'mysql2'
 gem "therubyracer"
 gem 'coffee-rails', '~> 3.1.1'
-#gem 'sprockets', '~> 2.3.1'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,31 +22,10 @@ gem "unicorn"
 gem 'dalli'
 gem "tinymce-rails"
 
-#gem "twitter_bootstrap_form_for", :git =>  "git://github.com/coder2000/twitter_bootstrap_form_for.git"
-gem "twitter_bootstrap_form_for", :path =>  "/home/ilya/ROR/github/twitter_bootstrap_form_for"
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :git => 'git://github.com/anjlab/bootstrap-rails.git'
-#git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
-#  gem 'gift-core'
-#  gem 'gift-auth'
-#  gem 'gift-lk'
-#  gem 'gift-base'
-#end
-
-#  group :development do 
-    gem 'gift-core', :path => "../gift/core"
-    gem 'gift-auth', :path => "../gift/auth"
-    gem 'gift-lk', :path => "../gift/lk"
-    gem 'gift-base', :path => "../gift/base"
-#  end
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
+gem "twitter_bootstrap_form_for", :git =>  "git://github.com/tzeskimo/twitter_bootstrap_form_for.git"
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :git => 'git://github.com/anjlab/bootstrap-rails.git'
+gem 'gift-core', :path => "../gift/core"
+gem 'gift-auth', :path => "../gift/auth"
+gem 'gift-lk', :path => "../gift/lk"
+gem 'gift-base', :path => "../gift/base"
 gem "letter_opener", :group => :development
