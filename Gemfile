@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 gem 'mysql2'
 gem "therubyracer"
 gem 'coffee-rails', '~> 3.1.1'
+#gem 'sprockets', '~> 2.3.1'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -21,7 +22,10 @@ gem "unicorn"
 gem 'dalli'
 gem "tinymce-rails"
 
-gem "twitter_bootstrap_form_for", :git =>  "git://github.com/coder2000/twitter_bootstrap_form_for.git"
+#gem "twitter_bootstrap_form_for", :git =>  "git://github.com/coder2000/twitter_bootstrap_form_for.git"
+gem "twitter_bootstrap_form_for", :path =>  "/home/ilya/ROR/github/twitter_bootstrap_form_for"
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :git => 'git://github.com/anjlab/bootstrap-rails.git'
 #git "git@github.com:rilya/giftb2b.git", :branch => "engines" do
 #  gem 'gift-core'
 #  gem 'gift-auth'
