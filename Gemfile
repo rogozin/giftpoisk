@@ -26,7 +26,8 @@ gem 'gift-core', :path => "../gift/core"
 gem 'gift-lk', :path => "../gift/lk"
 gem 'gift-base', :path => "../gift/base"
 
-gem "twitter_bootstrap_form_for", :git =>  "git://github.com/tzeskimo/twitter_bootstrap_form_for.git"
+gem "twitter_bootstrap_form_for", :git =>  "git://github.com/rilya/twitter_bootstrap_form_for.git"
+#:git =>  "git://github.com/coder2000/twitter_bootstrap_form_for.git"
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', 
 :git => 'git://github.com/anjlab/bootstrap-rails.git'
 gem "letter_opener", :group => :development
