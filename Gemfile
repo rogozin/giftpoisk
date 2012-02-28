@@ -21,12 +21,12 @@ gem 'jquery-rails'
 gem "unicorn"
 gem 'dalli'
 gem "tinymce-rails"
+gem 'gift-auth', :path => "../gift/auth"
+gem 'gift-core', :path => "../gift/core"
+gem 'gift-lk', :path => "../gift/lk"
+gem 'gift-base', :path => "../gift/base"
 
 gem "twitter_bootstrap_form_for", :git =>  "git://github.com/tzeskimo/twitter_bootstrap_form_for.git"
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', 
 :git => 'git://github.com/anjlab/bootstrap-rails.git'
-gem 'gift-core', :path => "../gift/core"
-gem 'gift-auth', :path => "../gift/auth"
-gem 'gift-lk', :path => "../gift/lk"
-gem 'gift-base', :path => "../gift/base"
 gem "letter_opener", :group => :development
