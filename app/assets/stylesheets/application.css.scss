@@ -5,11 +5,12 @@
  *= require base/reset
  * require_tree . 
  *= require jquery.treeview
- *= require base/layout
- *= require base/base
- *= require base/search 
- *= require news
- *= require_self
+ *= require app_bootstrap
+ * require base/layout
+ * require base/base
+ * require base/search 
+ * require news
+ * require_self
 */
 
 @import "giftpoisk_vars";

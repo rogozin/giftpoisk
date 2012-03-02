@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru"> 
+<head> 
+  <title><%= @page_title || page_title %></title>
+  <meta name="description" content="<%= yield :meta_description%>" /> 
+  <meta name="keywords" content="<%= yield :meta_keywords %>" />
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
+ $(function()
+  {
+    <%= yield :document_ready %>   
+  })
+ </script>
+  <%= yield :script %>
+ <!--[if lte IE 7]>
+<style type="text/css">
+    #all_content ul li {
+        display: inline;
+    }
+</style>
+<![endif]-->
+
+  <%= csrf_meta_tag %> 
+  <% unless local_request? -%>
+    
+   <!-- Google Analytics counter -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26182209-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+ <!-- /Google Analytics counter --> 
+  <% end -%>
+</head> 
+<body> 
+  <div id="header_title">
+    <%= link_to 'Каталог сувениров', "http://giftb2b.ru"  %>
+    <%= link_to 'Профессиональный инструмент для продажи сувениров', "http://giftpoisk.ru"  %>
+    <%= link_to 'Каталог на свой сайт', "http://sale.giftpoisk.ru"  %>
+  </div> <!-- end header_title --> 
+  <div id="header"> 
+  </div> <!-- end header --> 
+  
+  <div id="all_content"> 
+  <div class="clear"></div>       
+    <div class="content">
+      <div id="main_content">
+       <%= yield :layout  %>
+      </div>
+    </div>
+  </div> <!-- end all_content --> 
+  <div id="right_content"> 
+  <% if current_user && current_user.is_e_commerce? -%>    
+    <div id="cart" class="basket_right">
+    <%= render :partial => "cart/cart"    %>
+    </div>
+  <% end -%>
+
+   <div class="lk" id="lk"> 
+    <%  if current_user -%>
+      <%= render  :partial =>'shared/lk' %>
+    <% else -%>
+      <%= render :partial => "shared/pass_input" %>
+    <% end -%>
+   </div> <!-- end lk --> 
+
+   
+   <div id="user_menu" class="left_block">
+     <div class="line"></div>
+      <h3>Личный кабинет</h3>
+      <% unless current_user -%>        
+      <%= content_tag(:p, link_to('Поступившие заказы', lk_engine.orders_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Клиенты', lk_engine.firms_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Коммерческие предложения', lk_engine.commercial_offers_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Моя база сувениров', lk_engine.products_path, :class => "l-folder")) %>
+      <%= content_tag(:p, link_to('Мои новости', lk_engine.news_index_path, :class => "l-folder")) %>     
+      <%= content_tag(:p, link_to('Образцы', lk_engine.samples_path, :class => "l-folder")) %>      
+      <%= content_tag(:p, link_to('Пользователи', lk_engine.accounts_path, :class => "l-users")) %>      
+      <% else -%>
+      <%= render_lk_menu %>
+      <% end -%>
+     <div class="line"></div>
+    </div>
+
+    <div class="left_block ">
+      <%= render :partial => 'shared/banner', :locals => {:position => 21} %>    
+      <%= render :partial => 'shared/banner', :locals => {:position => 22} %>
+    </div> <!-- end left_block --> 
+  </div> <!--end right_content --> 
+  
+  <div id="left_content"> 
+   <%= link_to  image_tag("pix.gif", :alt => "giftpoisk.ru", :id => "gift_logo" ), main_app.root_path  %>  
+   <div class="left_block">
+         <%= render :partial => 'shared/banner', :locals => {:position => 11} %>
+   </div>
+
+    <div class="left_block b-background">
+    
+      <div class="cat-name">
+        <p>Каталог сувениров</p>
+        <a id="catalog_0" href="#0" class="b-down"></a>
+      </div>
+     
+      <div class="catalog-tree js-hidden">
+       <%= render :partial => 'shared/catalog' %>
+      </div>
+     
+      <div class="cat-name">
+        <p>Тематические сувениры</p>
+        <a  id="catalog_1" href="#1" class="b-down"></a>
+      </div>
+     
+     <div class="catalog-tree js-hidden">
+       <%= render :partial => 'shared/tematicheskie' %>
+      </div>
+
+      <div class="cat-name">
+        <p>Сувениры к праздникам</p>
+        <a  id="catalog_2" href="#2" class="b-down"></a>
+      </div>
+      <div class="catalog-tree js-hidden">
+       <%= render :partial => 'shared/analogs' %>
+      </div>         
+       
+    </div> <!-- end left_block --> 
+    <div class="left_block">
+      <%= render :partial => 'shared/banner', :locals => {:position => 12} %>
+     <% if News.cached_latest_news.present? -%>
+       <div class="b-n-header latest-news"><div class="b-b-block"><div class="b-t-block"><%= render :partial => 'shared/latest_news' %></div></div></div>
+     <% end -%>
+      <%= render :partial => 'shared/banner', :locals => {:position => 13} %>
+    </div>       
+
+  </div> <!--end left_content --> 
+  <div class="clear"></div> 
+  <div id="footer">
+  	<div class="f-block">
+    	<p>+7 (495) 741-06-95 e-mail:info@giftpoisk.ru</p>
+    	<p>© 2009 - 2012 <a href="http://giftresearch.ru">GiftResearch</a> - IT решения для рекламной отрасли</p>
+  	</div>
+  </div> <!-- end footer --> 
+	<% unless local_request? %>
+   <%= render :partial => "lk/shared/counters" %>
+   <%= render :partial => 'shared/zopim' %>  
+<% end -%>
+</body> 
+</html>
